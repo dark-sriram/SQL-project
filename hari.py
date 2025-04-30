@@ -10,8 +10,8 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_groq import ChatGroq
 
 # --- Page Setup ---
-st.set_page_config(page_title="SQL Chatbot", page_icon="🧠", layout="wide")
-st.title("🧠 SQL Chatbot from MySQL File using Groq")
+st.set_page_config(page_title="SQL Chatbot", page_icon="🔎", layout="wide")
+st.title("SQL Chatbot from MySQL File using Groq")
 st.markdown("Upload your `.sql` file to query it with natural language using Groq LLM!")
 
 # --- Sidebar Inputs ---
@@ -61,10 +61,10 @@ if groq_api_key:
                     st.dataframe(result)
 
                 except Exception as e:
-                    st.error(f"❌ Query Error: {e}")
+                    st.error("ask more qusetions about database")
 
         except Exception as e:
-            st.error(f"❌ Failed to process SQL file: {e}")
+            st.error(f"Failed to process SQL file: {e}")
 
 else:
     st.info("⬅ Please upload a `.sql` file and enter your Groq API key to continue.")
